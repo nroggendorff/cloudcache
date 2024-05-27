@@ -27,7 +27,7 @@ def save_metadata(metadata):
     with open(METADATA_FILE, 'w') as f:
         json.dump(metadata, f, indent=4)
 
-@bot.command(name='upload')
+@bot.command()
 async def upload(ctx, file_path: str):
     if not os.path.exists(file_path):
         await ctx.send(f"File '{file_path}' does not exist.")
